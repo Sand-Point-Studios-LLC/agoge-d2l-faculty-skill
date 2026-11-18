@@ -17,8 +17,11 @@ CSS = """
 :root{--g:#18453B;--m:#137A63;--bg:#fff;--fg:#242424;--soft:#e9f3ef;--line:#c9d6d1;--hd:#18453B}
 @media(prefers-color-scheme:dark){:root{--bg:#14191a;--fg:#e8eeec;--soft:#1d2b27;--line:#34463f;--g:#8fd1bd;--m:#6cc4aa;--hd:#0f2a24}}
 *{box-sizing:border-box}body{font:17px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:var(--bg);color:var(--fg)}
-header{background:var(--hd);color:#fff;padding:.8rem 1rem}header a{color:#fff;margin-right:1rem;text-decoration:none;font-weight:600;display:inline-block;padding:.2rem 0}
-header a:hover{text-decoration:underline}header a[aria-current]{border-bottom:3px solid #fff}
+header{background:var(--hd);color:#fff}header a{color:#fff;text-decoration:none;font-weight:600}
+.top{display:flex;justify-content:space-between;align-items:center;gap:.5rem 1rem;flex-wrap:wrap;padding:.55rem 1rem;border-bottom:1px solid rgba(255,255,255,.2);font-size:.9rem}
+.top a{display:inline-block;padding:.35rem 0;min-height:44px;line-height:1.9rem}.top a:hover,header nav a:hover{text-decoration:underline}.top .brand{font-weight:700}
+header nav{display:flex;flex-wrap:wrap;gap:.2rem .3rem;padding:.4rem .6rem .6rem}
+header nav a{display:inline-block;padding:.55rem .8rem;border-radius:999px;min-height:44px;line-height:1.5}header nav a[aria-current]{background:#fff;color:var(--hd)}
 a:focus-visible,summary:focus-visible{outline:3px solid #ffbf47;outline-offset:2px}
 .skip{position:absolute;left:-999px;top:0}.skip:focus{left:.5rem;top:.5rem;background:#fff;color:#000;padding:.5rem .8rem;z-index:10}
 .tbl{overflow-x:auto}
@@ -27,12 +30,16 @@ h2{border-bottom:2px solid var(--m);padding-bottom:.25rem;margin-top:2rem}
 .card{background:var(--soft);border-left:5px solid var(--m);padding:.8rem 1rem;margin:1rem 0;border-radius:4px}
 button.copy{font:inherit;font-size:.85rem;margin:-.4rem 0 .9rem;padding:.25rem .8rem;border:1px solid var(--g);background:var(--bg);color:var(--g);border-radius:4px;cursor:pointer}button.copy:focus-visible{outline:3px solid var(--g);outline-offset:2px}
 @media print{button.copy{display:none}}
+img,video,iframe{max-width:100%;height:auto}
 pre{background:var(--soft);border:1px solid var(--line);padding:.7rem .9rem;border-radius:6px;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
 code{font-family:ui-monospace,Consolas,monospace;font-size:.92em}
 details{border:1px solid var(--line);border-radius:6px;margin:.6rem 0;padding:.2rem .8rem}summary{cursor:pointer;font-weight:600;padding:.4rem 0}
 ol li,ul li{margin:.35rem 0}table{border-collapse:collapse;width:100%}th,td{border:1px solid var(--line);padding:.45rem;text-align:left;vertical-align:top}
 th{background:var(--soft)}footer{border-top:1px solid var(--line);padding:1rem;text-align:center;font-size:.9rem}
 a{color:var(--m)}
+@media(max-width:600px){body{font-size:16px}main{padding:1rem .9rem 2.5rem}h1{font-size:1.6rem}h2{font-size:1.25rem;margin-top:1.6rem}
+header nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}header nav a{white-space:nowrap}
+th,td{padding:.35rem;font-size:.9rem}button.copy{padding:.5rem 1rem;min-height:44px}summary{padding:.6rem 0}.card{padding:.7rem .8rem}}
 @media print{header,footer,.skip{display:none}main{max-width:none}details>*{display:block}
 a[href^=http]::after{content:" (" attr(href) ")";font-size:.85em}}
 """
@@ -47,8 +54,9 @@ def block(text):
 def page(fname, title, body):
     nav = "".join('<a href="%s"%s>%s</a>' % (f, ' aria-current="page"' if f == fname else "", t) for f, t in NAV)
     return ("<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
-            "<title>%s | D2L roll-forward kit</title><style>%s</style></head><body><a class='skip' href='#main'>Skip to content</a>"
-            "<header><nav aria-label='Pages'>%s</nav></header><main id='main'>%s</main>"
+            "<title>%s | Agoge D2L Faculty Skill</title><style>%s</style></head><body><a class='skip' href='#main'>Skip to content</a>"
+            "<header><div class='top'><a href='https://education.sandpointstudios.ltd/'>&larr; Sand Point Studios Education</a>"
+            "<a class='brand' href='index.html'>Agoge D2L Faculty Skill</a></div><nav aria-label='Pages'>%s</nav></header><main id='main'>%s</main>"
             "<footer>Agoge D2L Faculty Skill. Open source (Apache-2.0) from Sand Point Studios.</footer>"
             "<script>(function(){document.querySelectorAll('pre > code').forEach(function(c){var p=c.parentNode;var b=document.createElement('button');b.type='button';b.className='copy';b.textContent='Copy';b.setAttribute('aria-label','Copy this prompt');"
             "b.onclick=function(){var t=c.textContent;var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};"
