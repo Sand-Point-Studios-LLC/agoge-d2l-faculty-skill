@@ -1,0 +1,36 @@
+<!--
+title: Set up
+category: Getting started
+order: 2
+verified: 2026-11-12
+-->
+<h1>Set up</h1>
+<p>You need an MSU ChatGPT account that has the Edu seat (sign in with your MSU login; if Codex does not appear, ask your department who assigns ChatGPT Edu seats).</p>
+<p><strong>Read <a href="privacy.html">Privacy</a> first:</strong> the agent reads whatever files it opens, including quiz questions and answer keys. You do this once. Plan on 30 to 45 minutes, plus the download. If anything below does not look like what is on your screen, stop and <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">open an issue on GitHub</a>. (Already use VS Code? There is a <a href="vscode-route.html">VS Code version</a> of these steps.)</p>
+<h2>1. Install the ChatGPT app and sign in with your MSU account</h2>
+<ol>
+<li><strong>Windows:</strong> open the <strong>Microsoft Store</strong>, search <strong>ChatGPT</strong>, click <strong>Get</strong>.</li>
+<li><strong>Mac:</strong> download the ChatGPT app from OpenAI&rsquo;s apps page and drag it to Applications.</li>
+<li>Open it and sign in with your MSU login. If it asks which workspace, choose the MSU one.</li></ol>
+<p>You do not need GitHub or Copilot for any of this.</p>
+<h2>2. Install Python (the kit&rsquo;s tools run on it)</h2>
+<ol>
+<li><strong>Windows:</strong> open the <strong>Microsoft Store</strong>, search <strong>Python 3.13</strong>, click <strong>Get</strong>.</li>
+<li><strong>Mac:</strong> go to <strong>python.org/downloads</strong>, click the big yellow <strong>Download Python</strong> button, open the file and click Continue until it finishes.</li>
+<li>To check, ask the agent once the folder is open (step 4): <em>&ldquo;Is Python 3 installed? Tell me the version. On Windows, also install the tzdata package.&rdquo;</em> The tzdata package lets the date shift keep 11:59 PM at 11:59 PM across daylight saving, and the kit will refuse to move dates without it.</li>
+</ol>
+<h2>3. Get the kit</h2>
+<ol><li><a href="downloads/rollforward-kit.zip">Download rollforward-kit.zip</a> and unzip it (Windows: right-click, <strong>Extract All</strong>; Mac: double-click). Move the result out of Downloads into a folder that OneDrive or iCloud does not sync if you can (a 700 MB export syncs slowly), or into Documents if that is all you have. You get a folder called <code>Roll-Forward</code>.</li>
+<li><strong>Mac:</strong> Safari may unzip your D2L download by itself. If you see a folder instead of a .zip, delete the folder and download again after turning off <em>Open &ldquo;safe&rdquo; files after downloading</em> in Safari Settings, or use Chrome.</li>
+<li>Put your D2L export (.zip) in the folder called <code>put-export-here</code>, inside <code>Roll-Forward</code>. Never edit anything in it, and do not unzip it.</li></ol>
+<h2>4. Open the folder in the app</h2>
+<ol><li>In the ChatGPT app, start a new chat in <strong>Codex</strong>.</li>
+<li>Under the message box, click <strong>Choose project</strong>, then <strong>Create project</strong>.</li>
+<li>Click <strong>Add folder</strong>, pick the <code>Roll-Forward</code> folder, then click <strong>Create project</strong>.</li>
+<li>The app asks <strong>&ldquo;Trust this folder?&rdquo;</strong> Click <strong>Trust folder</strong>. This is normal for a folder you unzipped yourself. The box mentions that folder settings can run code automatically; this folder holds the kit&rsquo;s instructions and its Python tools, which the agent runs for you (you approve each one). Trusting the folder is what lets the agent use them. Only trust folders from a source you trust; this one came from the download on this site.</li>
+<li>Under the message box, check that the permission setting says <strong>Ask for approval</strong>. That is the default: the agent pauses and asks before it changes or runs anything. Leave it there.</li></ol>
+<h2>5. Test</h2>
+<p>In the message box, type this and press Enter:</p>
+<pre><code>What skills do you have?</code></pre>
+<p>You should see <strong>d2l-rollforward</strong> in the answer. That means the skill loaded. It does not prove Python or the web are working; the next prompts will show that. Go to the <a href="prompts.html">prompt card</a>.</p>
+<p>If it does not appear, make sure you chose the <code>Roll-Forward</code> folder itself, not a folder above or below it, and that you clicked <strong>Trust folder</strong>. Still nothing? <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">Open an issue on GitHub</a> and say what the answer listed.</p>

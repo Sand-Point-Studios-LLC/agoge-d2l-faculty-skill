@@ -1,0 +1,135 @@
+<!--
+title: All suggested prompts
+category: Getting started
+order: 4
+verified: 2026-11-13
+-->
+<h1>All suggested prompts, in the order you will probably use them</h1>
+<p>This page holds more than fifty prompts. Copy one into the message box, replace anything in [brackets], and press Enter. You can always ask in your own words; these are just reliable. For the short version see the <a href="prompts.html">prompt card</a>.</p>
+<div class="card"><strong>Rule of thumb:</strong> end every change request with &ldquo;show me first.&rdquo; Nothing should change until you have seen it. Your original export is never edited, and your live course is never touched.</div>
+<p><a href="#a">1. Look</a> &middot; <a href="#b">2. Say what you want</a> &middot; <a href="#c">3. Fix the words</a> &middot; <a href="#d">4. Dates</a> &middot; <a href="#e">5. Quiz and assignment settings</a> &middot; <a href="#f">6. New material</a> &middot; <a href="#u">7. Update existing content</a> &middot; <a href="#g">8. Check and build</a> &middot; <a href="#q">9. Validate and QA</a> &middot; <a href="#h">10. After the import</a> &middot; <a href="#i">Any time</a></p>
+
+<h2 id="a">1. Look at what you have</h2>
+<h3>Unpack and inventory</h3>
+<pre><code>Unpack my export and tell me what's in it.</code></pre>
+<p>You get counts of pages, quizzes, assignments and announcements, every date it found, and every mention of an old semester. Nothing is changed.</p>
+<h3>The settings report</h3>
+<pre><code>Make my course settings report.</code></pre>
+<p>Writes two pages into <code>ready-to-import</code>: <strong>COURSE-SETTINGS.html</strong> (every setting your course has) and <strong>QUALITY-REPORT.html</strong> (checks that found something, listed first). Open them in your browser. A clean report means these checks found nothing. It does not mean the course is ready.</p>
+<h3>The two or three things worth knowing</h3>
+<pre><code>What are the two or three most useful things you noticed about my course? Explain them in plain English.</code></pre>
+
+<h2 id="b">2. Say what you want your course to be like</h2>
+<pre><code>Walk me through my class standards.</code></pre>
+<p>It starts from patterns it found in <em>your</em> export and asks you to confirm or change each one: quizzes, due dates, assignments, announcements. You can stop after any section. Your answers are saved so it can tell you where the old course differs.</p>
+<pre><code>Which of my quizzes don't match my standards?</code></pre>
+<pre><code>What can I control on a quiz? Which of those can an import package carry?</code></pre>
+
+<h2 id="c">3. Fix the words</h2>
+<h3>Change the term name</h3>
+<pre><code>Replace "[old term, e.g. SS26]" with "[new term, e.g. SS27]". Show me every place first.</code></pre>
+<p>The preview names each page or quiz and shows the words around the match. It separates ordinary text from <strong>course codes</strong> (such as SS26-ACC-826-001) and from ids and links, which it never changes. It will ask you whether to change the course codes too. Either answer is fine.</p>
+<h3>Change a fact that appears in several places</h3>
+<pre><code>My office hours are now [Thursdays 10 to noon]. Show me every place office hours appear before you change anything.</code></pre>
+<p>It should list every page, plus any Word or PowerPoint file that mentions it (with the slide or paragraph). PDFs cannot be edited, so it lists those by name for you to change from their source.</p>
+<h3>Find dates written in the text</h3>
+<pre><code>List every date written in my page text, not stored in D2L, so I can check them myself.</code></pre>
+<h3>A reading link that looks dead</h3>
+<pre><code>The link on [page name] for [week] looks dead. Tell me exactly what the link is and where it is, and I will open it myself.</code></pre>
+<p>The agent will not search the web for course material. It tells you the link and where it lives.</p>
+
+<h2 id="d">4. Move the dates</h2>
+<pre><code>The old first day of class was [Monday, January 12, 2026]. The new first day is [Monday, January 11, 2027]. Show me a preview of moving every date, with examples, before you change anything.</code></pre>
+<p>Use two dates that fall on the same weekday and are a whole number of weeks apart, so weekdays stay put. The preview shows examples of before and after in Eastern time. 11:59 PM stays 11:59 PM across daylight saving. It refuses to move the dates twice on the same working copy.</p>
+<pre><code>Look up the [Spring 2027] academic calendar on the Registrar's site. Quote the dates and the link, then wait for me to confirm.</code></pre>
+<p>This is the only thing the agent should look up on the web.</p>
+<pre><code>There is no class on [Monday, March 15]. Which items are due that day or during that week? Show me, and suggest a new day for each.</code></pre>
+
+<h2 id="e">5. Quiz and assignment settings</h2>
+<p>Only for a <strong>new, empty shell</strong>. A quiz that already has student attempts cannot be changed by importing.</p>
+<pre><code>Show me the settings on every quiz in plain English.</code></pre>
+<pre><code>Make quizzes [3, 7] allow two attempts. Show me what you will change first.</code></pre>
+<p>Quiz numbers are the <strong>#</strong> column in COURSE-SETTINGS.html.</p>
+<pre><code>Which quizzes show a time limit that is not actually enforced?</code></pre>
+<pre><code>Which quizzes do not shuffle answer order?</code></pre>
+<pre><code>Does any quiz have a view that opens after it closes? What does it show?</code></pre>
+<pre><code>Which due dates are not on the day and time my standards say?</code></pre>
+
+<h2 id="f">6. New material</h2>
+<p>The agent will ask which format you want (HTML page, for example) before it writes anything. This kit cannot build Word, PowerPoint or PDF files yet; it offers HTML or a draft to paste.</p>
+<pre><code>Draft a week 1 welcome announcement in the same tone as my other announcements. Show me before you save it.</code></pre>
+<pre><code>Draft assignment instructions for [topic] as an HTML page, in the style of my other assignment pages.</code></pre>
+<pre><code>I have a MediaSpace video. Here is its embed code: [paste the whole code]. The video shows [what it shows]. Make a block I can paste into a page.</code></pre>
+<p>Paste the <em>whole</em> embed code from MediaSpace (Share, then Embed). Then play the video as a student and check that the captions are there and correct. The tool cannot see inside MediaSpace.</p>
+
+<h2 id="u">7. Update existing content</h2>
+<p>Work one change at a time and read the preview before you say yes. These work on the HTML pages, announcements, quiz text and settings in your export. They also work inside existing <strong>Word and PowerPoint</strong> files (the kit changes the text and keeps the formatting; open one changed file and look before you trust it). A <strong>PDF cannot be edited</strong>: change the Word or PowerPoint file it came from and export a new PDF. The kit does not yet convert Word to HTML or rebuild slides.</p>
+<h3>Find, then change</h3>
+<pre><code>Find every page, announcement and quiz that mentions [thing, e.g. a textbook title, a policy, a name]. List each by its title and show the sentence. Do not change anything yet.</code></pre>
+<pre><code>Now change [old wording] to [new wording] in the places I approve: [list them]. Show me each before and after first.</code></pre>
+<h3>Common updates</h3>
+<pre><code>Update the instructor name, email and office hours everywhere they appear. New details: [name, email, hours]. List every place first.</code></pre>
+<pre><code>Find every mention of a textbook edition, a software version or a price, and list them so I can check which are out of date.</code></pre>
+<pre><code>Find every mention of a week number, module number or "last semester" that may no longer be right. List them with the page title.</code></pre>
+<pre><code>Update my late work and attendance wording to this: [paste]. Show me every page that currently has wording on these.</code></pre>
+<h3>Announcements</h3>
+<pre><code>List my announcements with their start dates in the order students see them. Which ones are only true for last term?</code></pre>
+<pre><code>Rewrite announcement "[headline]" for [new term] in the same tone. Show me the new version and keep the old one until I say to replace it.</code></pre>
+<h3>Quizzes and assignments</h3>
+<pre><code>List every quiz and assignment with its due date, close date and points, in the order of the course. Which ones have nothing behind them in the gradebook?</code></pre>
+<pre><code>Which quizzes still mention [old term, old date, or old assignment name] in their question text? List the quiz and the question number only.</code></pre>
+<h3>Word, PowerPoint and PDF files</h3>
+<pre><code>List every Word and PowerPoint file in my course that mentions [thing, e.g. my office hours, a term, a date]. Give the file name and the slide or paragraph.</code></pre>
+<pre><code>In the Word and PowerPoint files, change [old wording] to [new wording]. Show me the preview with the file and slide first. Then tell me which files I should open and look at.</code></pre>
+<pre><code>Which PDFs in my course contain [thing]? I know you cannot edit a PDF. Tell me which Word or PowerPoint file each one probably came from, if it is in the export.</code></pre>
+<pre><code>List every date written inside my Word and PowerPoint files, with the file and slide, so I can update them by hand or one at a time.</code></pre>
+<h3>Structure (what the kit cannot do yet)</h3>
+<pre><code>I want to reorder or rename modules. What can you do with this export, and what would I have to do by hand in D2L?</code></pre>
+<p>Expect an honest answer: reorganizing modules, converting Word files to HTML, and building slides from the template are not built yet. It should say so and offer a plan you can follow by hand.</p>
+
+<h2 id="g">8. Check and build</h2>
+<pre><code>Check my package for problems.</code></pre>
+<p>It lists what to look at, most important first. Read each line to yourself; the ones about files missing from the export are real gaps in what D2L exported.</p>
+<pre><code>Explain each item the check found, in plain English, and tell me which ones I should fix before importing.</code></pre>
+<pre><code>Build the import package and list what changed.</code></pre>
+<p>It writes the zip into <code>ready-to-import</code> along with <strong>CHANGES.html</strong>. A 700 MB course takes about a minute; nothing is wrong while it is quiet. Keep the change list. It is your record of what is different this term.</p>
+
+<h2 id="q">9. Validate and QA</h2>
+<p>Use these after you build, and again after any later change. <strong>A clean result means &ldquo;these checks found nothing.&rdquo; It never means ready or safe.</strong> Say each answer out loud to yourself: what was checked, and what was not.</p>
+<h3>Run the checks and read them</h3>
+<pre><code>Run every quality check on my working copy and give me the results with the problems first. For each result say what was checked and what was NOT checked.</code></pre>
+<pre><code>Which checks are not built yet? List them, so I know what I still have to look at by hand.</code></pre>
+<h3>Prove what changed</h3>
+<pre><code>Compare my original export with the package you built. Tell me every kind of change, with counts, and tell me what you did not touch.</code></pre>
+<pre><code>Show me the change list (CHANGES.html) in plain English. Does it match everything I asked you to do in this chat? Tell me anything I asked for that is missing, and anything that changed that I did not ask for.</code></pre>
+<h3>Dates</h3>
+<pre><code>Show me the earliest and latest date in the new package, and check that none of them falls on a break or outside [Spring 2027]. Here is the calendar: [paste or confirm the Registrar dates you quoted].</code></pre>
+<pre><code>Which due dates are not on [Sunday at 11:59 PM], my rule? Which items have a close date earlier than their due date?</code></pre>
+<pre><code>Do the dates agree across a quiz, its assignment, the syllabus and the announcements? The kit does not check this automatically, so go through the ones I name: [list].</code></pre>
+<h3>Quizzes</h3>
+<pre><code>For every quiz, tell me: attempts, time limit and whether it is enforced, answer shuffling, and any extra view after it closes. Flag every quiz that differs from my standards.</code></pre>
+<pre><code>Which quizzes have a question with no text, a random draw bigger than its question bank, or a picture embedded in the question? Those break imports.</code></pre>
+<h3>Links, files and accessibility (as far as the kit can check)</h3>
+<pre><code>Which pages point to images or files that are not in the package? And which files in the package does no page link to?</code></pre>
+<pre><code>Which pages have an image with no alt attribute, or a heading level that skips (for example heading 2 straight to heading 4)? Remember you are not judging whether the alt text is any good. Tell me that too.</code></pre>
+<pre><code>Which videos or audio files have no caption file beside them? List the MediaSpace videos too, and tell me I must check captions myself in MediaSpace.</code></pre>
+<h3>People and privacy</h3>
+<pre><code>Does anything in the export look like student information: a roster, student names or IDs, submissions, or grades for individuals? Check file names, and tell me honestly that you cannot see inside every file.</code></pre>
+<pre><code>Is anything in the course hidden from students that should be visible, or visible that should be hidden (instructor-only pages, drafts)?</code></pre>
+<h3>Last read-through</h3>
+<pre><code>Pick five pages at random from my course and read each one as a student. Tell me anything confusing, out of date, or that still names the old term.</code></pre>
+<pre><code>Give me a one-page QA summary I can keep: what I changed, what the checks found, what they did not check, and the three things I must do by hand in D2L before students see it.</code></pre>
+<div class="card"><strong>Still on you, in D2L:</strong> import into a new empty shell, open one question in each quiz, check due dates against the syllabus, play a video as a student and check captions, and turn LockDown Browser back on. The kit cannot do these for you.</div>
+
+<h2 id="h">10. After the import</h2>
+<p>Import into a <strong>new, empty shell</strong>, never a course with students. Then, in D2L:</p>
+<ol><li>Open one question in every quiz, as a student would see it.</li><li>Open one page with an image and one with a video.</li><li>Check every due date against your syllabus.</li><li>Turn LockDown Browser back on for any quiz that used it.</li></ol>
+<p>See the <a href="after-import.html">after-import checklist</a> for the rest. If the import shows warnings, paste them into the message box:</p>
+<pre><code>D2L showed these warnings after the import. Explain them in plain English: [paste]</code></pre>
+
+<h2 id="i">Any time</h2>
+<pre><code>What did you just do, in plain English?</code></pre>
+<pre><code>Undo that and put it back how it was.</code></pre>
+<pre><code>What can't this kit do yet?</code></pre>
+<pre><code>Is Python 3 installed? Tell me the version. On Windows, also install the tzdata package.</code></pre>
+<p>If a box asks permission to run a command, read it: kit commands start with <code>python</code> (or <code>python3</code>, <code>py</code>) and name one of the kit&rsquo;s tools. See the <a href="prompts.html">prompt card</a> for what to click.</p>

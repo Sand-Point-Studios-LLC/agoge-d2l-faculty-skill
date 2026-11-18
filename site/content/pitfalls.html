@@ -1,0 +1,22 @@
+<!--
+title: Common pitfalls and how to avoid them
+category: Help
+order: 2
+verified: 2026-11-12
+-->
+<h1>Common pitfalls and how to avoid them</h1>
+<p>Each of these has happened to us. The agent knows them, and the tool checks for the ones marked <strong>checked</strong>.</p>
+<ol>
+<li><strong>Exporting without course files.</strong> You get an outline and no content. Tick &ldquo;Include course files&rdquo; on the last screen.</li>
+<li><strong>One stray quotation mark.</strong> A single unescaped <code>&quot;</code> in a file made D2L refuse a 669 MB package with only &ldquo;Conversion failed.&rdquo; <em>Checked: the tool will not build a package with a broken file.</em></li>
+<li><strong>Re-importing a quiz.</strong> D2L makes a second quiz and does not update the first. A quiz with attempts can only be repaired by hand. Import into a new, empty shell.</li>
+<li><strong>Importing Grades into a shell that has grade items.</strong> Items match by exact name, so a one-character difference makes a second column. Leave Grades unticked when the shell already has a gradebook.</li>
+<li><strong>Pictures embedded in a quiz.</strong> D2L breaks them on import and students see a broken image. Use image files. <em>Checked.</em></li>
+<li><strong>Dates in page text, Word files and slides.</strong> The date shift moves stored dates only. <em>Checked: the quality report lists pages with dates in their text.</em></li>
+<li><strong>Typing the academic calendar from memory.</strong> Finals were a week off in three of our courses once. Look it up and confirm it.</li>
+<li><strong>Renaming a graded item.</strong> The new name matches nothing in the gradebook and makes a second column. Name quizzes for what they cover, not &ldquo;Quiz 7.&rdquo;</li>
+<li><strong>Instructor-only material left visible.</strong> Hidden does not always mean left out of the package. <em>Checked for obvious names such as &ldquo;answer key.&rdquo;</em></li>
+<li><strong>Deleting instead of removing.</strong> Deleting a quiz deletes its attempts, and deleting an assignment folder deletes its submissions. Use &ldquo;Remove from Content&rdquo; in a shell with students.</li>
+<li><strong>Recreating an outside-tool link.</strong> It will not be paired and will not return grades. Move the existing one.</li>
+<li><strong>Trusting a clean package.</strong> A package can report zero broken links and still be missing most of its graded work. <em>Checked: the report lists gradebook items with nothing behind them.</em></li>
+</ol>

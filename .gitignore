@@ -1,0 +1,8 @@
+rollforward-kit.zip
+d2l-rollforward-skill.zip
+skill/d2l-rollforward/references/
+d2l-rollforward-plugin.zip
+site/dist/
+__pycache__/
+*.pyc
+*.zip

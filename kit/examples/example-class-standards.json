@@ -1,0 +1,26 @@
+{
+  "_note": "ONE INSTRUCTOR'S CHOICES, NOT DEFAULTS. This is an example of what a finished standards file looks like. Do not copy it into your course unless it matches what you want. The agent will never use it unless you ask.",
+  "quiz": {
+    "attempts_allowed": 1,
+    "annotation_tools": true,
+    "additional_view_after_close": true,
+    "lockdown": true,
+    "calendar_event": null,
+    "time_limit_minutes": null
+  },
+  "due_rules": {
+    "quiz": "opens Monday 12:01 AM, due and closes Sunday 11:59 PM",
+    "assignment": "due Sunday 11:59 PM",
+    "announcement": "posts Monday 8:00 AM",
+    "exam": "its own window, set per exam"
+  },
+  "layout": "a Start Here module, then one module per dated week named 'Week N - M/D'; inside a week a lesson folder with Overview, Read, Lecture, Practice, then the quiz and assignments",
+  "pptx_template": "templates/My-Template.pptx",
+  "notes": "Answer order shuffled on every multiple-choice question. Quizzes named for what they cover, not by number. LockDown Browser with Monitor on every quiz, and a time limit on every quiz (the number differs by course). She sets both by hand in D2L after import: LockDown and Monitor do not travel in a package, and the kit can check LockDown but not Monitor. Late-work penalty is a course policy, not a D2L setting. Calendar entry left undecided. Formats: lesson and topic pages are HTML; class slides are PowerPoint; one SQL assignment uses a Word template on purpose, not a PDF form.",
+  "default_formats": {
+    "lesson_page": "html",
+    "slides": "pptx",
+    "assignment_template": "docx"
+  },
+  "confirm_format_each_time": true
+}

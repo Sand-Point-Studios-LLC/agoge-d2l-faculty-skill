@@ -1,0 +1,32 @@
+<!--
+title: Start here
+category: Getting started
+order: 1
+verified: 2026-11-12
+-->
+<h1>Roll a D2L course forward with an AI agent</h1>
+<div class="card"><strong>Know before you start.</strong>
+<ul>
+<li><strong>The last step is not proven yet.</strong> Importing a package this kit builds into D2L has not been tested on this version. Try it on a practice shell first.</li>
+<li><strong>Your live course is never touched.</strong> This kit never logs in to D2L. You import into a <em>new, empty shell</em> (a shell is a D2L course; a new one is an empty course for the new term).</li>
+<li><strong>Text the agent reads is sent to OpenAI</strong> under your MSU ChatGPT account. That includes quiz questions and answer keys. Read <a href="privacy.html">Privacy</a> first.</li>
+<li><strong>Plan on about two hours the first time</strong> (setup is most of it). Later terms are much faster.</li>
+</ul></div>
+<p>You give the agent your D2L export (the zip D2L produces). It shows you what your course does now, checks for some known causes of failed imports, moves the dates, and builds a clean package, which is the zip you import. <a href="quick-start.html">The one-page version</a> has only the steps.</p>
+<h2>The flow</h2>
+<ol>
+<li><strong><a href="export.html">Export</a></strong> your course from D2L with course files ticked.</li>
+<li><strong>Look.</strong> The agent unpacks it and writes a <a href="reports.html">plain-English report</a> of every setting your course has, with the usual value for each and the items that differ.</li>
+<li><strong>Decide.</strong> You read the report and say what to keep or change ("make quiz 11 one attempt, show me first").</li>
+<li><strong>Check.</strong> The agent looks for things that would break an import and reports when each check last ran.</li>
+<li><strong>Move the dates.</strong> It looks up the new term on the official MSU calendar, shows you the dates and the source, and moves nothing until you confirm.</li>
+<li><strong><a href="import.html">Build and import</a></strong> into a new shell, then work through the <a href="after-import.html">after-import checklist</a>.</li>
+</ol>
+<h2>What it will not do</h2>
+<ul>
+<li>It cannot fix a quiz that already has student attempts. Those are repaired by hand.</li>
+<li>It does not carry LockDown Browser, release conditions, the navbar, or anything about people. <a href="not-carried.html">See the full list</a>.</li>
+</ul>
+<h2>Not built yet</h2>
+<p>Word to accessible HTML, PowerPoint modernization, and reorganizing modules. Several checks are also planned and shown as &ldquo;not built yet&rdquo; in your quality report. Silence from a check that does not exist is not a pass, and a clean report is not proof that the course is accessible or that the import will work.</p>
+<p>Also useful: <a href="prompts.html">the prompt card</a>, <a href="faq.html">the FAQ</a>, <a href="pitfalls.html">common pitfalls</a>, <a href="all.html">all articles</a>. Questions or problems: <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">open an issue on GitHub</a>.</p>

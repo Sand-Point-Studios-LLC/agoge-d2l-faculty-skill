@@ -1,0 +1,17 @@
+<!--
+title: Codex won't open
+category: Help
+order: 5
+verified: 2026-11-12
+-->
+<h1>Codex won&rsquo;t open</h1>
+<div class="card"><strong>Only do this if Codex opens and then closes by itself</strong> (this was seen in the VS Code extension). If it opens normally, skip this page. Nothing in the folder below holds course data. It holds Codex&rsquo;s own history, and you lose only the old chat list, not your sign-in.</div>
+<p>This happened on a laptop that had an older version of Codex installed. The older version left a small history database the new one refuses to read. Moving it aside fixes it, and you lose only the old chat list, not your sign-in.</p>
+<ol><li>Close every VS Code window and the ChatGPT app.</li><li>Open <strong>PowerShell</strong> (Windows) or <strong>Terminal</strong> (Mac).</li><li>Windows: paste this and press Enter.</li></ol>
+<pre><code>cd $env:USERPROFILE\.codex</code></pre>
+<ol start="4"><li>Paste this:</li></ol>
+<pre><code>New-Item -ItemType Directory -Force old-db | Out-Null</code></pre>
+<ol start="5"><li>Then this:</li></ol>
+<pre><code>Move-Item *.sqlite* old-db -Force</code></pre>
+<ol start="6"><li>Open the app (or VS Code and its Codex panel) again. It builds a fresh database.</li></ol>
+<p>On a Mac the folder is <code>.codex</code> in your home folder; move the files ending in <code>.sqlite</code> into a new folder beside them. If it still fails, <a href="faq.html">see the FAQ</a>.</p>

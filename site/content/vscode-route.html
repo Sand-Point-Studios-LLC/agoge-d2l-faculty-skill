@@ -1,0 +1,37 @@
+<!--
+title: Set up
+category: Getting started
+order: 2
+verified: 2026-11-12
+-->
+<h1>Set up with VS Code instead</h1>
+<div class="card"><strong>Most people should use the <a href="setup.html">ChatGPT app route</a>.</strong> Use this page only if you already work in VS Code and prefer it. The kit works the same either way.</div>
+<p>You do this once. Plan on 30 to 45 minutes, plus the download. If anything below does not look like what is on your screen, stop and <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">open an issue on GitHub</a>.</p>
+<h2>1. Sign in to ChatGPT with your MSU account</h2>
+<ol><li>Go to <strong>chatgpt.com</strong> and sign in with your MSU login.</li>
+<li>If it asks which workspace, choose the MSU one.</li></ol>
+<p>You do not need GitHub or Copilot for any of this.</p>
+<h2>2. Install VS Code</h2>
+<ol><li>Go to <strong>code.visualstudio.com</strong> and download it for your computer.</li><li>Install it and open it.</li></ol>
+<h2>3. Install the Codex extension</h2>
+<ol><li>In VS Code, click the <strong>Extensions</strong> icon in the left bar (four squares).</li>
+<li>Search for <strong>Codex</strong> and install the one published by <strong>OpenAI</strong>.</li>
+<li>A <strong>Codex</strong> panel appears on the right, next to a Chat tab. Use the Codex tab. The Chat tab belongs to Copilot, which you do not need.</li></ol>
+<h2>3b. Install Python (the kit&rsquo;s tools run on it)</h2>
+<ol>
+<li><strong>Windows:</strong> open the <strong>Microsoft Store</strong>, search <strong>Python 3.13</strong>, click <strong>Get</strong>.</li>
+<li><strong>Mac:</strong> go to <strong>python.org/downloads</strong>, click the big yellow <strong>Download Python</strong> button, open the file and click Continue until it finishes.</li>
+<li>To check, ask the agent (once the folder is open, step 6): <em>&ldquo;Is Python 3 installed? Tell me the version. On Windows, also install the tzdata package.&rdquo;</em> The tzdata package lets the date shift keep 11:59 PM at 11:59 PM across daylight saving, and the kit will refuse to move dates without it.</li>
+</ol>
+<h2>4. Sign in</h2>
+<ol><li>In the Codex panel, click <strong>Sign in with ChatGPT</strong>.</li><li>Use your MSU login in the browser window that opens.</li></ol>
+<h2>5. Get the kit</h2>
+<ol><li><a href="downloads/rollforward-kit.zip">Download rollforward-kit.zip</a> and unzip it. You get a folder called <code>Roll-Forward</code>.</li>
+<li>Already have an empty folder open in VS Code? Use <a href="downloads/rollforward-kit-contents.zip">rollforward-kit-contents.zip</a> instead: it unzips straight into that folder, with no extra <code>Roll-Forward</code> folder inside it.</li>
+<li>Put your D2L export (.zip) in the folder called <code>put-export-here</code>. Never edit anything in it.</li></ol>
+<h2>6. Open the folder and test</h2>
+<ol><li>In VS Code choose <strong>File, then Open Folder</strong>, and pick <code>Roll-Forward</code>.</li>
+<li>In the Codex panel, type this and press Enter:</li></ol>
+<pre><code>What skills do you have?</code></pre>
+<p>You should see <strong>d2l-rollforward</strong> in the answer. If you do, you are ready: go to the <a href="prompts.html">prompt card</a>.</p>
+<p>If the Codex panel opens and then closes by itself, see <a href="codex-wont-open.html">Codex won&rsquo;t open</a>. Skip that page if it opens normally.</p>
