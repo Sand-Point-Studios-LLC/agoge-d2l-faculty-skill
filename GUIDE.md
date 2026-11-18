@@ -19,9 +19,10 @@ then does it become the course students see.
 
 You need three things.
 
-1. **An MSU ChatGPT account with the Edu seat.** Sign in at chatgpt.com with your MSU login. If it
-   asks you to pick a workspace, pick the MSU one.
-2. **The ChatGPT desktop app, which includes Codex.**
+1. **A ChatGPT account on a plan that includes Codex, or a Claude account on a plan that includes
+   Claude Code.** Use your institution's account if it gives you one. If the app asks which workspace,
+   pick your institution's. The setup page on the site has the Claude steps in full.
+2. **The ChatGPT desktop app, which includes Codex** (or the Claude desktop app and its Code tab).
    - **Mac:** download it from the ChatGPT apps page and drag it to Applications. Apple Silicon
      Macs (2020 and later) take the standard build; older Intel Macs take the Intel build.
    - **Windows:** open the Microsoft Store, search "ChatGPT", click **Get**. Or open PowerShell and
@@ -58,13 +59,13 @@ It is optional but gives you a "revert" button if you dislike a change.
 3. Inside `Roll-Forward`, open the folder called `put-export-here` and move your D2L `.zip` into it.
 
 Leave the folder structure alone. The file called `AGENTS.md` and the hidden `.agents` folder hold the
-agent's instructions (a Codex *skill* called `d2l-rollforward`). It reads them automatically, and you
+agent's instructions (a *skill* called `d2l-rollforward`, which Codex and Claude Code both read). It reads them automatically, and you
 never need to open them. The skill is also available on its own as `d2l-rollforward-skill.zip`.
 
 ## Part 3 — Open the folder in the agent
 
 1. Open the ChatGPT app and sign in.
-2. Choose **Codex**, then **Open a folder**, and pick `Roll-Forward`. **[VERIFY: exact menu wording]**
+2. In ChatGPT choose **Codex**, then **Open a folder**, and pick `Roll-Forward`. **[VERIFY: exact menu wording]** In Claude, open the **Code** tab, choose a local session, and pick `Roll-Forward`. **[VERIFY: the Claude route is untested]**
 3. Under the message box, set the permission mode to **Ask for approval**. The agent will then pause
    and ask before it changes or runs anything. Leave it there for your first run.
 
@@ -108,7 +109,7 @@ everything it changed. **Keep that list.** It is your record of what is differen
 > **Never import into a course students are already in.** D2L can't merge an import into existing
 > content. You would get a second copy of everything sitting beside the first.
 
-1. Find your new term's course in D2L. MSU creates an empty shell for every section automatically once you are listed as the instructor of record, so there is nothing to request. If it isn't there yet, your department scheduler hasn't assigned you to the section.
+1. Find your new term's course in D2L. Most schools create an empty shell for every section once you are listed as the instructor of record. If yours isn't there, ask your department or D2L administrator to create one.
 2. Open the new shell. Click **Course Admin**, then **Import / Export / Copy Components**.
 3. Choose **Import Components**, then **Upload**, and pick the zip from `ready-to-import`.
 4. Click **Import All Components**. Wait for the status to read *Completed*.

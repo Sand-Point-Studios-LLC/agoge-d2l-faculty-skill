@@ -109,8 +109,8 @@ between due and closes.
 - After `shift`, list every item whose day or time differs from the rule, and every one that lands on a
   break or finals day. Show the list; do not change dates yourself.
 
-**The calendar.** Do not give term dates from memory. Look them up on the official MSU Registrar
-calendar (reg.msu.edu, "Academic Calendar") and the Broad calendar, show the first day, last day, finals
+**The calendar.** Do not give term dates from memory. Look them up on the official academic
+calendar of the faculty member's own school (usually the Registrar's page; ask which school if you do not know), show the first day, last day, finals
 and breaks with the source and today's date, and ask them to confirm. Ask whether their sections meet on
 different days (Mon/Wed and Tue/Thu lose different meetings at a holiday). If you cannot reach the web,
 ask them to paste the calendar text.

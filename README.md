@@ -7,6 +7,8 @@ accessibility problems, and builds an import package you review before anything 
 Open source from [Sand Point Studios](https://sandpointstudios.ltd) under the Apache License 2.0.
 Guide and articles: **https://agoge-d2l.sandpointstudios.ltd**
 
+Works with **ChatGPT (Codex)** and **Claude (Claude Code)**; the setup page of the guide has steps for both, and the kit zip ships the skill where each looks (`.agents/skills/` and `.claude/skills/`). It is not tied to any one school. The ChatGPT route is tested end to end; the Claude route is not yet walked through on a clean machine.
+
 ## What is here
 
 | Path | What it is |

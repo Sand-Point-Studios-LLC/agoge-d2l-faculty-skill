@@ -2,17 +2,26 @@
 title: Set up
 category: Getting started
 order: 2
-verified: 2026-11-12
+verified: 2026-11-17
 -->
 <h1>Set up</h1>
-<p>You need an MSU ChatGPT account that has the Edu seat (sign in with your MSU login; if Codex does not appear, ask your department who assigns ChatGPT Edu seats).</p>
-<p><strong>Read <a href="privacy.html">Privacy</a> first:</strong> the agent reads whatever files it opens, including quiz questions and answer keys. You do this once. Plan on 30 to 45 minutes, plus the download. If anything below does not look like what is on your screen, stop and <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">open an issue on GitHub</a>. (Already use VS Code? There is a <a href="vscode-route.html">VS Code version</a> of these steps.)</p>
-<h2>1. Install the ChatGPT app and sign in with your MSU account</h2>
+<p>The kit works with an AI assistant that can work inside a folder on your computer. Pick one: <strong>ChatGPT</strong> (with Codex) or <strong>Claude</strong> (with Claude Code). Use whichever your institution provides, or the one you already have. Both do the same job here.</p>
+<div class="card"><strong>Tested routes.</strong> We have tested the ChatGPT (Codex) route end to end. The Claude route uses the same kit and Anthropic&rsquo;s documented steps, but we have not walked it through on a clean machine yet. If a button is named differently on your screen, trust your screen and <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">open an issue on GitHub</a> so we can fix the page.</div>
+<p><strong>Read <a href="privacy.html">Privacy</a> first:</strong> the agent reads whatever files it opens, including quiz questions and answer keys, and sends that text to the AI company. You do this once. Plan on 30 to 45 minutes, plus the download. If anything below does not look like what is on your screen, stop and <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">open an issue on GitHub</a>. (Already use VS Code? There is a <a href="vscode-route.html">VS Code version</a> of these steps.)</p>
+<h2>1. Get an account and the app</h2>
+<p>If your institution gives you an AI account for work, use that one and not a personal one. Check its rules in <a href="privacy.html">Privacy</a>.</p>
+<h3>If you chose ChatGPT</h3>
 <ol>
+<li>You need a ChatGPT account on a plan that includes Codex. If Codex does not appear in the app, ask whoever assigns ChatGPT seats at your institution, or check OpenAI&rsquo;s plan page.</li>
 <li><strong>Windows:</strong> open the <strong>Microsoft Store</strong>, search <strong>ChatGPT</strong>, click <strong>Get</strong>.</li>
 <li><strong>Mac:</strong> download the ChatGPT app from OpenAI&rsquo;s apps page and drag it to Applications.</li>
-<li>Open it and sign in with your MSU login. If it asks which workspace, choose the MSU one.</li></ol>
-<p>You do not need GitHub or Copilot for any of this.</p>
+<li>Open it and sign in. If it asks which workspace, choose your institution&rsquo;s.</li></ol>
+<h3>If you chose Claude</h3>
+<ol>
+<li>You need a paid Claude plan that includes Claude Code (Pro, Max, Team or Enterprise at the time of writing; check Anthropic&rsquo;s plan page, because plans change). A free account does not include it.</li>
+<li>Go to <strong>claude.ai/download</strong> and download the Claude desktop app for <strong>Windows</strong> or <strong>Mac</strong>. Install it and open it.</li>
+<li>Sign in. If your institution has a Claude Team or Enterprise workspace, sign in with that account.</li></ol>
+<p>You do not need a GitHub account for any of this.</p>
 <h2>2. Install Python (the kit&rsquo;s tools run on it)</h2>
 <ol>
 <li><strong>Windows:</strong> open the <strong>Microsoft Store</strong>, search <strong>Python 3.13</strong>, click <strong>Get</strong>.</li>
@@ -24,13 +33,21 @@ verified: 2026-11-12
 <li><strong>Mac:</strong> Safari may unzip your D2L download by itself. If you see a folder instead of a .zip, delete the folder and download again after turning off <em>Open &ldquo;safe&rdquo; files after downloading</em> in Safari Settings, or use Chrome.</li>
 <li>Put your D2L export (.zip) in the folder called <code>put-export-here</code>, inside <code>Roll-Forward</code>. Never edit anything in it, and do not unzip it.</li></ol>
 <h2>4. Open the folder in the app</h2>
+<h3>ChatGPT</h3>
 <ol><li>In the ChatGPT app, start a new chat in <strong>Codex</strong>.</li>
 <li>Under the message box, click <strong>Choose project</strong>, then <strong>Create project</strong>.</li>
 <li>Click <strong>Add folder</strong>, pick the <code>Roll-Forward</code> folder, then click <strong>Create project</strong>.</li>
-<li>The app asks <strong>&ldquo;Trust this folder?&rdquo;</strong> Click <strong>Trust folder</strong>. This is normal for a folder you unzipped yourself. The box mentions that folder settings can run code automatically; this folder holds the kit&rsquo;s instructions and its Python tools, which the agent runs for you (you approve each one). Trusting the folder is what lets the agent use them. Only trust folders from a source you trust; this one came from the download on this site.</li>
+<li>The app asks <strong>&ldquo;Trust this folder?&rdquo;</strong> Click <strong>Trust folder</strong>. This is normal for a folder you unzipped yourself. The box mentions that folder settings can run code automatically; this folder holds the kit&rsquo;s instructions and its Python tools, which the agent runs for you (you approve each one). Only trust folders from a source you trust; this one came from the download on this site.</li>
 <li>Under the message box, check that the permission setting says <strong>Ask for approval</strong>. That is the default: the agent pauses and asks before it changes or runs anything. Leave it there.</li></ol>
+<h3>Claude</h3>
+<ol><li>In the Claude app, open the <strong>Code</strong> tab.</li>
+<li>Choose to work on your own computer (a <strong>local</strong> session), not a cloud one, so your files stay put.</li>
+<li>Choose the folder: pick the <code>Roll-Forward</code> folder itself.</li>
+<li>If it asks whether you trust the files in this folder, say yes. This folder holds the kit&rsquo;s instructions and its Python tools, which the agent runs for you (you approve each one). Only trust folders from a source you trust; this one came from the download on this site.</li>
+<li>Check that the permission mode is the one that <strong>asks before it runs commands or edits files</strong> (usually named &ldquo;Ask permissions&rdquo;). Leave it there; do not choose a mode that approves everything automatically.</li></ol>
+<p>Prefer a terminal? Install Claude Code from Anthropic&rsquo;s documentation, open a terminal inside the <code>Roll-Forward</code> folder, and run <code>claude</code>.</p>
 <h2>5. Test</h2>
 <p>In the message box, type this and press Enter:</p>
 <pre><code>What skills do you have?</code></pre>
 <p>You should see <strong>d2l-rollforward</strong> in the answer. That means the skill loaded. It does not prove Python or the web are working; the next prompts will show that. Go to the <a href="prompts.html">prompt card</a>.</p>
-<p>If it does not appear, make sure you chose the <code>Roll-Forward</code> folder itself, not a folder above or below it, and that you clicked <strong>Trust folder</strong>. Still nothing? <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">Open an issue on GitHub</a> and say what the answer listed.</p>
+<p>If it does not appear, make sure you chose the <code>Roll-Forward</code> folder itself, not a folder above or below it, and that you trusted the folder. Still nothing? <a href="https://github.com/Sand-Point-Studios-LLC/agoge-d2l-faculty-skill/issues">Open an issue on GitHub</a> and say what the answer listed.</p>

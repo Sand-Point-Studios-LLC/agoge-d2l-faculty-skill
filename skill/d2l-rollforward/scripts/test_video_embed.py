@@ -31,7 +31,7 @@ class Embed(unittest.TestCase):
             ve.parse("no iframe here")
 
     def test_entry_only_omits_the_widget(self):
-        out = ve.build({"partner": ve.PARTNER, "uiconf": ve.UICONF, "entry": "1_abc12345", "widget": ""}, "A title")
+        out = ve.build({"partner": "123", "uiconf": "456", "entry": "1_abc12345", "widget": ""}, "A title")
         self.assertNotIn("widgetId", out.replace("%22", '"'))
 
     def test_title_is_escaped(self):

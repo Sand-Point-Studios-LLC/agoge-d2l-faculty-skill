@@ -26,14 +26,16 @@ with zipfile.ZipFile(here / "d2l-rollforward-skill.zip", "w", zipfile.ZIP_DEFLAT
 with zipfile.ZipFile(here / "rollforward-kit.zip", "w", zipfile.ZIP_DEFLATED) as z:
     for p in files(here / "kit"):
         z.write(p, "Roll-Forward/" + p.relative_to(here / "kit").as_posix())
-    for p in files(skill):   # Codex reads repo skills from .agents/skills
+    for p in files(skill):   # Codex reads repo skills from .agents/skills, Claude Code from .claude/skills
         z.write(p, "Roll-Forward/.agents/skills/d2l-rollforward/" + p.relative_to(skill).as_posix())
+        z.write(p, "Roll-Forward/.claude/skills/d2l-rollforward/" + p.relative_to(skill).as_posix())
 # The same kit without the Roll-Forward wrapper, for unzipping straight into a folder that is already open.
 with zipfile.ZipFile(here / "rollforward-kit-contents.zip", "w", zipfile.ZIP_DEFLATED) as z:
     for p in files(here / "kit"):
         z.write(p, p.relative_to(here / "kit").as_posix())
     for p in files(skill):
         z.write(p, ".agents/skills/d2l-rollforward/" + p.relative_to(skill).as_posix())
+        z.write(p, ".claude/skills/d2l-rollforward/" + p.relative_to(skill).as_posix())
 import json
 PLUGIN = {"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
           "name": "d2l-rollforward", "version": "0.1.0", "license": "Apache-2.0",

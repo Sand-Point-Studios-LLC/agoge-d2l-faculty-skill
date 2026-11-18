@@ -4,17 +4,20 @@
     python3 video_embed.py --paste "<div ...><iframe ...></iframe></div>" --title "What the video shows"
     python3 video_embed.py --entry 1_abc12345 --title "..." [--widget 1_xyz98765]
 
-Faculty upload the video to mediaspace.msu.edu first, then Share, Embed, and copy the code. Pasting that
-whole code is the safe route: nothing here is guessed. Building from an entry ID alone works for the
-MSU player but leaves out the per-video widget ID, which has not been confirmed to be optional, so it
-says so. Standard library only.
+Faculty upload the video to their school's MediaSpace first, then Share, Embed, and copy the code. Pasting that
+whole code is the safe route: nothing here is guessed. Building from an entry ID alone needs your school's
+Kaltura partner id and player id (both are in any embed code you copy) and leaves out the per-video widget
+ID, which has not been confirmed to be optional, so it says so. Standard library only.
 """
 import argparse, html, json, re, sys
 from urllib.parse import quote, unquote, urlparse, parse_qs
 
-PARTNER = "811482"        # MSU's Kaltura partner id, from an embed code copied 2026-11-12
-UICONF = "54819062"       # the player it uses
-HOSTS = {"cdnapisec.kaltura.com", "cdnapi.kaltura.com", "mediaspace.msu.edu"}
+def host_ok(host):
+    """Kaltura's own hosts, or a school MediaSpace such as mediaspace.<school>.edu."""
+    host = host or ""
+    return host == "kaltura.com" or host.endswith(".kaltura.com") or host.startswith("mediaspace.")
+
+
 SANDBOX = ("allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock "
            "allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation "
            "allow-top-navigation-by-user-activation")
@@ -27,7 +30,7 @@ def parse(code):
         raise ValueError("I could not find an <iframe> in that. Paste the whole embed code from MediaSpace (Share, then Embed).")
     src = html.unescape(m.group(2))
     u = urlparse(src)
-    if u.hostname not in HOSTS:
+    if not host_ok(u.hostname):
         raise ValueError("That iframe points at %s, not MediaSpace or Kaltura. I will not build a block from it." % u.hostname)
     q = parse_qs(u.query)
     entry = (q.get("entry_id") or [""])[0]
@@ -35,6 +38,8 @@ def parse(code):
         raise ValueError("That embed code has no entry_id, so I cannot tell which video it is.")
     pm = re.search(r"/p/(\d+)/", u.path)
     um = re.search(r"/uiconf_id/(\d+)", u.path)
+    if not (pm and um):
+        raise ValueError("That embed code does not show the partner and player ids. Copy the full code from Share, then Embed.")
     widget = ""
     prov = (q.get("config[provider]") or [""])[0]
     if prov:
@@ -44,7 +49,7 @@ def parse(code):
             pass
     playback = (q.get("config[playback]") or [""])[0]
     t = re.search(r"\btitle\s*=\s*(['\"])(.*?)\1", code, re.I | re.S)
-    return {"partner": pm.group(1) if pm else PARTNER, "uiconf": um.group(1) if um else UICONF, "entry": entry,
+    return {"partner": pm.group(1), "uiconf": um.group(1), "entry": entry,
             "widget": widget, "playback": playback, "title": html.unescape(t.group(2)).strip() if t else ""}
 
 
@@ -77,6 +82,8 @@ def main():
     g.add_argument("--paste", help="the embed code copied from MediaSpace (Share, Embed)")
     g.add_argument("--entry", help="a MediaSpace entry id such as 1_abc12345 (see the note about the widget id)")
     ap.add_argument("--title"); ap.add_argument("--widget", default="")
+    ap.add_argument("--partner", help="your Kaltura partner id (digits after /p/ in any embed code); needed with --entry")
+    ap.add_argument("--uiconf", help="your player id (digits after /uiconf_id/ in any embed code); needed with --entry")
     ap.add_argument("--out", help="write the block to this file (recommended: nothing but the code ends up in it)")
     a = ap.parse_args()
     try:
@@ -85,7 +92,9 @@ def main():
         else:
             if not re.fullmatch(r"\d_[a-z0-9]{8}", a.entry):
                 raise ValueError("An entry id looks like 1_abc12345.")
-            info = {"partner": PARTNER, "uiconf": UICONF, "entry": a.entry, "widget": a.widget, "title": ""}
+            if not (a.partner and a.uiconf and a.partner.isdigit() and a.uiconf.isdigit()):
+                raise ValueError("With --entry, also give --partner and --uiconf (digits found in any embed code from your MediaSpace). Pasting a whole embed code with --paste avoids this.")
+            info = {"partner": a.partner, "uiconf": a.uiconf, "entry": a.entry, "widget": a.widget, "title": ""}
             if not a.widget:
                 print("NOTE: no widget id given. The player may still work for this video, but that is not confirmed. "
                       "Pasting the full embed code from MediaSpace is the safe route.", file=sys.stderr)
